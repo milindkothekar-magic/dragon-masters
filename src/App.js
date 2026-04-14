@@ -717,8 +717,7 @@ export default function Game() {
               );
             })}
           </div>
-          <button onClick={async () => { if (confirm("Start a brand new adventure?")) { try { await window.storage.delete(SAVE_KEY); } catch (e) { } setGd(null); setDName(""); setNameIn(""); setScreen("title"); } }} style={{ background: "none", border: "none", color: "#475569", fontSize: 9, cursor: "pointer", marginTop: 4, fontFamily: '"Quicksand",sans-serif' }}>🔄 Reset</button>
-        </div>
+          <button onClick={async () => { if (window.confirm("Start a brand new adventure?")) { try { localStorage.removeItem(SAVE_KEY); } catch (e) { } setGd(null); setDName(""); setNameIn(""); setScreen("title"); } }} style={{ background: "none", border: "none", color: "#475569", fontSize: 9, cursor: "pointer", marginTop: 4, fontFamily: '"Quicksand",sans-serif' }}>🔄 Reset</button>        </div>
       </div>
     );
   }
