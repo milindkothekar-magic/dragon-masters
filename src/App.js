@@ -364,7 +364,6 @@ function DragonSVG({ quests = 0, size = 120, animate = true }) {
   const si = getDragonStageIdx(quests);
   const stage = getDragonStage(quests);
   const c = stage.bodyColor;
-  const sc = size / 120; // scale factor
   const wingLen = 25 + si * 6;
   const hornLen = 8 + si * 3;
   const bodyW = 20 + si * 2;
@@ -717,7 +716,7 @@ export default function Game() {
               );
             })}
           </div>
-          <button onClick={async () => { if (window.confirm("Start a brand new adventure?")) { try { localStorage.removeItem(SAVE_KEY); } catch (e) { } setGd(null); setDName(""); setNameIn(""); setScreen("title"); } }} style={{ background: "none", border: "none", color: "#475569", fontSize: 9, cursor: "pointer", marginTop: 4, fontFamily: '"Quicksand",sans-serif' }}>🔄 Reset</button>        </div>
+        <button onClick={async () => { if (window.confirm("Start a brand new adventure?")) { try { localStorage.removeItem(SAVE_KEY); } catch (e) { } setGd(null); setDName(""); setNameIn(""); setScreen("title"); } }} style={{ background: "none", border: "none", color: "#475569", fontSize: 9, cursor: "pointer", marginTop: 4, fontFamily: '"Quicksand",sans-serif' }}>🔄 Reset</button>        </div>
       </div>
     );
   }
